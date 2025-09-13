@@ -1,0 +1,6 @@
+/* Import settings CSS*/
+@import "./settings/reset.css";
+@import "./settings/components.css";
+
+/* Import pages CSS*/
+@import "./pages/hero.css";

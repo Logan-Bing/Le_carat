@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@font-face {
+    font-family: 'Casanova Serif Display Free';
+    src: url('./fonts/CasanovaSerifDisplayFree-Regula.woff2') format('woff2'),
+        url('./fonts/CasanovaSerifDisplayFree-Regula.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+:root {
+    /* COLOR VARIABLES */
+
+    --primary-color: #666C00;
+    --secondary-color: #6D6224;
+    --font-black: #121212;
+    --grey: #B0AFBE;
+    --white: #FFFFFF;
+
+    --text-font-family: 'Montserrat';
+    /* SPACING */
+    --xs-margin: 0.5rem;
+    --s-margin: 1rem;
+    --m-margin: 2rem;
+    --l-margin: 2.5rem;
+    --xl-margin: 4rem;
+    --xxl-margin: 5rem;
+    --xxxl-margin: 5.75;
+}
