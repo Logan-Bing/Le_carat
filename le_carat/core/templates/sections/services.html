@@ -1,0 +1,16 @@
+{% load static %}
+
+<div class="main__service" id="services_section">
+    <div class="service__content">
+        <h1 class="service__content__title">Services et Experiences</h1>
+        <p class="service__content__paragraph">Parce qu’un séjour d’exception se vit dans chaque détail</p>
+    </div> 
+    <div class="service__images">
+        <img src={% static 'core/images/spa.png'%} alt="Sas Hotel">
+        <img class="second_img" src={% static 'core/images/salle_sport.png'%} alt="Sas Hotel">
+    </div>
+    <div class="service__infos">
+        <p>Le Carat vous propose des services pensés pour votre bien-être et votre équilibre. <br>En attendant l’ouverture, les détails de nos prestations seront partagés en avant-première avec les membres de notre newsletter.</p>
+        <button class="primary-button" onclick="scroll_section(3)">S'inscrire</button>
+    </div>
+</div>

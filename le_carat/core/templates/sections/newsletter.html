@@ -1,0 +1,11 @@
+<div class="main__newsletter" id="newsletter_section">
+    <div class="newsletter__header">
+        <h1>Newsletter</h1>
+        <p>Recevez en avant-première nos offres spéciales, nos nouveautés et nos conseils pour un séjour d’exception.</p>
+    </div>
+    <form class= "newsletter__form" method="post">
+        {% csrf_token %}
+        {{form}}
+        <button class="primary-button" type="submit">S'abonner</button>
+    </form>
+</div>

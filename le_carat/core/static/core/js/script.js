@@ -47,7 +47,6 @@ const tl = gsap.timeline({
     scrollTrigger: {
         trigger: main_about,
         start: "top 60%",
-        markers: true,
     }
 });
 
@@ -57,4 +56,45 @@ tl.to(about_title.querySelectorAll('.char'), {
 })
 .to(about_paragraph.querySelectorAll('.char'),{
     stagger: 0.02,
+})
+
+// SCRRRROOOOOOOOOOOOOLLLLLLLLLLL
+
+const hero_section = document.getElementById("hero_section")
+const room_section = document.getElementById("room_section");
+const services_section = document.getElementById("services_section");
+const restaurant_section = document.getElementById("restaurant_section");
+const newsletter_section = document.getElementById("newsletter_section");
+
+const all_sections = [ room_section, services_section, restaurant_section, newsletter_section, hero_section];
+
+function scroll_section(index){
+    hide_menu();
+    all_sections[index].scrollIntoView({behavior: 'smooth'}) 
+}
+
+
+// NAVBAR
+
+const burger_icon = document.querySelector(".burger__menu");
+const menu_navigation = document.querySelector(".menu_navigation");
+const cross_icon = document.querySelector(".cross-icon");
+const navbar = document.querySelector(".navbar");
+const body = document.querySelector("body");
+
+function hide_menu(){
+    menu_navigation.classList.add("hiden");
+    navbar.classList.remove("hiden");
+    body.classList.remove("stop_scroll");
+}
+
+burger_icon.addEventListener("click", () => {
+    menu_navigation.classList.remove("hiden");
+    navbar.classList.add("hiden");
+    body.classList.add("stop_scroll");
+    menu_navigation.scrollIntoView();
+})
+
+cross_icon.addEventListener("click", () => {
+    hide_menu();
 })

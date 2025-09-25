@@ -1,4 +1,5 @@
 from pathlib import Path
+import environ
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -15,6 +16,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+env = environ.Env()
+environ.Env.read_env()
 
 # Application definition
 
@@ -25,8 +28,18 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    "anymail",
     'django.contrib.staticfiles',
 ]
+
+ANYMAIL = {
+    "BREVO_API_KEY": env("API_BREVO"),
+    "DEBUG_API_REQUESTS": True,
+}
+EMAIL_BACKEND = "anymail.backends.brevo.EmailBackend"
+SERVER_EMAIL = "loganlugez8@gmail.com"
+DEFAULT_FROM_EMAIL = "loganlugez8@gmail.com"
+NOTIFY_EMAIL = "loganlugez8@gmail.com"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -54,6 +67,7 @@ TEMPLATES = [
         },
     },
 ]
+
 
 WSGI_APPLICATION = 'le_carat.wsgi.application'
 

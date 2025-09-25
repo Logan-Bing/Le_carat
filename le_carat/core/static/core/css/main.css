@@ -4,4 +4,11 @@
 
 /* Import pages CSS*/
 @import "./pages/hero.css";
-@import "./pages/about.css"
+@import "./pages/about.css";
+@import "./pages/rooms.css";
+@import "./pages/services.css";
+@import "./pages/restaurant.css";
+@import "./pages/newsletter.css";
+@import "./pages/success_form.css";
+@import "./components/navbar.css";
+@import "./components/footer.css";

@@ -1,0 +1,119 @@
+{% load static %}
+
+<div class="main__rooms" id="room_section">
+    <div class="rooms__header">
+        <h1>Nos chambres</h1>
+        <p>Des espaces chaleureux et lumineux, parfaits pour se reposer et profiter pleinement de votre séjour.</p>
+    </div>
+    <div class="rooms__content">
+         <div class="rooms__swap">
+            <div class="arrow__swap">
+                <img onclick="GetIndexSlide(-1)" class="arrow-icon" src="{% static 'core/images/arrow-left.png' %}" alt="fleche gauche">
+                <img onclick="GetIndexSlide(1)" class="arrow-icon" src="{% static 'core/images/arrow-right.png' %}" alt="fleche droite">
+            </div>
+            <div class="rooms__infos">
+                <h2 class="room_name">Chambre Double</h2>
+                <div class="rooms__details">
+                    <div class="rooms__equipement">
+                        <img src="{% static "core/images/Vector.png" %}" alt="icon wifi">
+                        <span>Wifi illimité</span>
+                    </div>
+                    <div class="rooms__equipement">
+                        <img src="{% static "core/images/mdi-light_television.png" %}" alt="icon television">
+                        <span>Télévision écran plat</span>
+                    </div>
+                    <div class="rooms__equipement">
+                        <img src="{% static "core/images/carbon_temperature-min.png" %}" alt="icon temperature">
+                        <span>Climatisation / chauffage</span>
+                    </div>
+                    <div class="rooms__equipement">
+                        <img src="{% static "core/images/hugeicons_security.png" %}" alt="icon cadenas">
+                        <span>Coffre-fort</span>
+                    </div>
+                </div>
+            </div>
+            <div class="cta__newsletter" id="test">
+                <p>Les détails de nos chambres arrivent bientôt. Inscrivez-vous à notre newsletter pour être informé(e) en avant-première.</p>
+                <button class="primary-button" onclick="scroll_section(3)">Newsletter</button>
+            </div>
+        </div>
+        <div class="rooms__images">
+            <img id="room-img" src="{% static 'core/images/double-1.png' %}" alt="chambre double">
+            <div class="bullet__container">
+                <div class="bullet active" onclick="ChangeImage(0)"></div>
+                <div class="bullet" onclick="ChangeImage(1)"></div>
+                <div class="bullet hiden_bullet" onclick="ChangeImage(2)"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    const room_name = document.querySelector(".room_name");
+    const room_img = document.getElementById("room-img");
+    const bullet_container = document.querySelector(".bullet__container");
+    const bullets = document.querySelectorAll(".bullet");
+
+    const double_room = {
+        images : ["static/core/images/double-1.png", "static/core/images/double_2.png"],
+        name : "Chambre Double",
+    }
+
+    const luxe_room = {
+        images : ["static/core/images/luxe-1.png", "static/core/images/luxe-2.png", "static/core/images/luxe-3.png"],
+        name : "Suite Deluxe"
+    }
+
+    const family_room = {
+        images : ["static/core/images/family-1.png","static/core/images/family-2.png", "static/core/images/family-3.png"],
+        name : "Suite Familliale"
+    }
+
+    const rooms = [double_room, luxe_room, family_room];
+
+    let index = 0;
+
+    function GetIndexSlide(move)
+    {
+        index = index + move;
+        if (index < 0)
+            index = rooms.length - 1;
+        if (index > rooms.length -1)
+            index = 0;
+        ChangeSlide(index);
+    }
+
+    const new_bullet = document.querySelector(".hiden_bullet");
+
+    function ChangeSlide(index)
+    {
+        if (rooms[index].images.length > 2)
+            new_bullet.classList.remove("hiden_bullet");            
+        else
+            new_bullet.classList.add("hiden_bullet");
+        room_name.textContent = rooms[index].name;
+        room_img.src = rooms[index].images[0];
+        bullets.forEach((bullet) => {
+            bullet.classList.remove("active");
+        })
+        bullets[0].classList.add("active");
+    }
+
+    function ChangeImage(index)
+    {
+        rooms.forEach((room) => {
+            if (room.name == room_name.textContent){
+                room_img.src = room.images[index];
+            }
+        })
+    }
+
+    bullets.forEach((bullet) => {
+        bullet.addEventListener("click", () => {
+            bullets.forEach((bullet) => {
+                bullet.classList.remove("active");
+            })
+            bullet.classList.add("active");
+        })
+    })
+</script>

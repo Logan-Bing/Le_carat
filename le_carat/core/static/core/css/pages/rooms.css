@@ -1,0 +1,116 @@
+.main__rooms {
+    max-width: 100%;
+    padding: 8rem 4rem 8rem 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4.5rem;
+}
+
+.rooms__header {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+}
+
+.rooms__content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4.5rem;
+}
+
+.rooms__images {
+    max-width: 65%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.rooms__images img {
+    width: 100%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.bullet__container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.bullet {
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    background-color: black;
+    cursor: pointer;
+}
+
+.rooms__details {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.rooms__swap {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 4.5rem;
+}
+
+.arrow__swap {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+}
+
+.arrow-icon {
+    cursor: pointer;
+}
+
+.arrow-icon:hover {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    transition-duration: 0.6s;
+}
+
+.rooms__infos {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.rooms__equipement {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    font-family: 'Montserrat';
+}
+
+.cta__newsletter {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.bullet.active {
+    background-color: var(--grey);
+}
+
+.bullet.hiden_bullet {
+    display: none;
+}
+
+@media(max-width: 768px) {
+    .rooms__content {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .rooms__images {
+        max-width: 100%;
+    }
+}

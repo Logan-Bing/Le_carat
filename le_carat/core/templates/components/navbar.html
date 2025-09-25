@@ -1,0 +1,17 @@
+{% load static %}
+
+<div class="navbar">
+    <div class="burger__menu">
+        <img src="{% static 'core/images/sidebar-icon.png' %}" alt="icon-sidebar" class="icon-sidebar">
+    </div>
+    <button class="cta-contact secondary-button" onclick="scroll_section(3)">Contactez-Nous</button>
+</div>
+<div class="menu_navigation hiden">
+    <img class="cross-icon" src="{% static "core/images/cross.png" %}" alt="icon croix">
+    <nav>
+        <li onclick="scroll_section(0)">Nos Chambres</li>
+        <li onclick="scroll_section(1)">Services</li>
+        <li onclick="scroll_section(2)">Restaurant et Bar</li>
+        <li onclick="scroll_section(3)">Contact</li>
+    </nav>
+</div>
