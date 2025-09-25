@@ -14,7 +14,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['le-carat.onrender.com','www.le-carat.com']
 
 env = environ.Env()
 environ.Env.read_env()
@@ -34,7 +34,7 @@ INSTALLED_APPS = [
 
 ANYMAIL = {
     "BREVO_API_KEY": env("API_BREVO"),
-    "DEBUG_API_REQUESTS": True,
+    "DEBUG_API_REQUESTS": False,
 }
 EMAIL_BACKEND = "anymail.backends.brevo.EmailBackend"
 SERVER_EMAIL = "loganlugez8@gmail.com"
@@ -50,6 +50,12 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
+SECURE_SSL_REDIRECT = True
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True  # applique HSTS à tous les sous-domaines
+SECURE_HSTS_PRELOAD = True  
+SECURE_HSTS_SECONDS = 31536000
 
 ROOT_URLCONF = 'le_carat.urls'
 
