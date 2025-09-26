@@ -43,6 +43,7 @@ NOTIFY_EMAIL = "loganlugez8@gmail.com"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -57,6 +58,7 @@ SECURE_HSTS_INCLUDE_SUBDOMAINS = True  # applique HSTS à tous les sous-domaines
 SECURE_HSTS_PRELOAD = True  
 SECURE_HSTS_SECONDS = 31536000
 
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 ROOT_URLCONF = 'le_carat.urls'
 
 TEMPLATES = [
